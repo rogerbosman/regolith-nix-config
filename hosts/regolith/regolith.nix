@@ -4,9 +4,12 @@
         inputs.regolith.nixosModules.regolith
     ];
     regolith.enable = true;
+    
     # enabled gnome to avoid any conflict because of gnome-dependencies required by regolith
     services.desktopManager.gnome.enable = true;
     services.displayManager.gdm.enable = true; # gdm is required by gnome
+
+
     # uncomment if want to use greetd
 
     # services.greetd = {

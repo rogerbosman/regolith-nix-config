@@ -219,6 +219,41 @@ fi
 print_separator
 printf "\n%.0s" {1..2}
 
+print_separator
+printf "\n%.0s" {1..2}
+
+# Check for Regolith configuration files
+if [ ! -f ~/.config/regolith3/Xresources ]; then
+    echo "$WARN ⚠️  No default Xresources file found at ~/.config/regolith3/Xresources"
+    echo "$NOTE This is required for proper Regolith session functionality"
+    echo "$WARN Without proper Xresources configuration, you may experience:"
+    echo "      - Session startup errors"
+    echo "      - Missing keybindings"
+    echo "      - Incorrect theme/appearance settings"
+    echo "      - General session instability"
+    printf "\n"
+    echo "$NOTE A default configuration is available in ./dotfiles/regolith3"
+    echo "$NOTE This will copy the configuration files to ~/.config/regolith3"
+    printf "\n"
+    read -rp "$CAT Would you like to copy the default Regolith configuration files? [Y/n]: " copy_config
+    copy_config=${copy_config:-Y}
+    
+    if [[ "$copy_config" =~ ^[Yy]$ ]]; then
+        echo "$NOTE Copying default Regolith configuration..."
+        mkdir -p ~/.config/regolith3
+        if cp -r ./dotfiles/regolith3/* ~/.config/regolith3/ 2>/dev/null; then
+            echo "$OK Default Regolith configuration copied successfully!"
+        else
+            echo "$ERROR Failed to copy configuration files. Please copy manually from ./dotfiles/regolith3"
+        fi
+    else
+        echo "$WARN Configuration files not copied. You will need to set up Xresources manually."
+        echo "$NOTE You can copy them later with: cp -r ./dotfiles/regolith3/* ~/.config/regolith3/"
+    fi
+    
+    print_separator
+fi
+
 # Installation completion check
 if command -v regolith-session-wayland &>/dev/null; then
     printf "\n${OK} 🎉 Installation completed successfully!${RESET}\n\n"

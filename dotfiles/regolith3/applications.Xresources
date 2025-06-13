@@ -1,0 +1,20 @@
+! =============================================================================
+! Application Bindings
+! =============================================================================
+
+! System Applications
+wm.binding.settings: c
+wm.program.settings: gnome-control-center;regolith-control-center
+wm.binding.display: d
+wm.program.display: gnome-control-center display ; regolith-control-center display
+wm.binding.wifi: w
+wm.program.wifi: gnome-control-center wifi ; regolith-control-center wifi
+wm.binding.bluetooth: b
+wm.program.bluetooth: gnome-control-center bluetooth ; regolith-control-center bluetooth
+wm.binding.files: Shift+n
+wm.program.files: /usr/bin/nautilus --new-window
+
+! UI Programs
+wm.program.notification_ui: 
+wm.program.refresh_ui: /usr/bin/regolith-look refresh
+wm.program.next_layout: input * xkb_switch_layout next

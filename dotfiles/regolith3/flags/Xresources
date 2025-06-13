@@ -1,0 +1,198 @@
+regolith.keybinding.terminal: Super+T
+regolith.terminal: kitty
+wm.program.notification_ui: kitty fish 
+wm.binding.notification_ui: x
+regolith.wallpaper.file: /home/roronoa/Pictures/wallpapers/gnulinux.png 
+regolith.wallpaper.options: zoom
+
+wm.mod: Mod4
+wm.alt: Mod1
+
+! =============================================================================
+! Workspace Names
+! =============================================================================
+! wm.workspace.01.name: "1"
+! wm.workspace.02.name: "2"
+! wm.workspace.03.name: "3"
+! wm.workspace.04.name: "4"
+! wm.workspace.05.name: "5"
+! wm.workspace.06.name: "6"
+! wm.workspace.07.name: "7"
+! wm.workspace.08.name: "8"
+! wm.workspace.09.name: "9"
+! wm.workspace.10.name: "10"
+! wm.workspace.11.name: "11"
+! wm.workspace.12.name: "12"
+! wm.workspace.13.name: "13"
+! wm.workspace.14.name: "14"
+! wm.workspace.15.name: "15"
+! wm.workspace.16.name: "16"
+! wm.workspace.17.name: "17"
+! wm.workspace.18.name: "18"
+! wm.workspace.19.name: "19"
+
+wm.workspace.01.key: 1
+wm.workspace.02.key: 2
+wm.workspace.03.key: 3
+wm.workspace.04.key: 4
+wm.workspace.05.key: 5
+wm.workspace.06.key: 6
+wm.workspace.07.key: 7
+wm.workspace.08.key: 8
+wm.workspace.09.key: 9
+wm.workspace.10.key: 0
+wm.workspace.high.key: Ctrl
+
+wm.client.focused.color.border: "#002b36"
+wm.client.focused.color.background: "#586e75"
+wm.client.focused.color.text: "#fdf6e3"
+wm.client.focused.color.indicator: "#268bd2"
+wm.client.focused.color.child_border: "#268bd2"
+
+wm.client.focused_inactive.color.border: "#002b36"
+wm.client.focused_inactive.color.background: "#073642"
+wm.client.focused_inactive.color.text: "#839496"
+wm.client.focused_inactive.color.indicator: "#073642"
+wm.client.focused_inactive.color.child_border: "#073642"
+
+wm.client.unfocused.color.border: "#002b36"
+wm.client.unfocused.color.background: "#073642"
+wm.client.unfocused.color.text: "#839496"
+wm.client.unfocused.color.indicator: "#073642"
+wm.client.unfocused.color.child_border: "#073642"
+
+wm.client.urgent.color.border: "#002b36"
+wm.client.urgent.color.background: "#dc322f"
+wm.client.urgent.color.text: "#fdf6e3"
+wm.client.urgent.color.indicator: "#002b36"
+wm.client.urgent.color.child_border: "#dc322f"
+
+wm.bar.background.color: "#002b36"
+wm.bar.statusline.color: "#93a1a1"
+wm.bar.separator.color: "#268bd2"
+
+wm.bar.workspace.focused.border.color: "#073642"
+wm.bar.workspace.focused.background.color: "#073642"
+wm.bar.workspace.focused.text.color: "#eee8d5"
+wm.bar.workspace.active.border.color: "#073642"
+wm.bar.workspace.active.background.color: "#073642"
+wm.bar.workspace.active.text.color: "#586e75"
+wm.bar.workspace.inactive.border.color: "#002b36"
+wm.bar.workspace.inactive.background.color: "#002b36"
+wm.bar.workspace.inactive.text.color: "#586e75"
+wm.bar.workspace.urgent.border.color: "#dc322f"
+wm.bar.workspace.urgent.background.color: "#dc322f"
+wm.bar.workspace.urgent.text.color: "#fdf6e3"
+
+gtk.font_name: Sans 13
+
+wm.binding.left: h
+wm.binding.right: l
+wm.binding.up: k
+wm.binding.down: j
+
+wm.binding.move_left: Shift+h
+wm.binding.move_right: Shift+l
+wm.binding.move_up: Shift+k
+wm.binding.move_down: Shift+j
+
+wm.hide_cursor.timout: 5000
+wm.hide_cursor.show_when_typing: enable
+
+wm.binding.screenshot.window: Print
+wm.binding.screenshot: Shift+Print
+wm.binding.screenshot.all: Shift+Ctrl+Print
+
+wm.binding.bar_toggle: i
+wm.bar.position: bottom
+wm.bar.font: monospace
+wm.bar.separatorchar: " "
+wm.bar.stripworkspacenumbers: yes
+wm.bar.mode: dock
+wm.bar.workspace_min_width: 36
+wm.bar.status_config: /etc/regolith/i3status-rust/config.toml
+wm.bar.status_command: i3status-rs /etc/regolith/i3status-rust/config.toml
+
+sway.media.volume.step: 5
+wm.media.brightness.step: 5
+
+wm.guesture.swipe.three_right: workspace prev_on_output
+wm.guesture.swipe.three_left: workspace next_on_output
+wm.guesture.swipe.three_up: exec ilia -p windows
+wm.guesture.swipe.three_down: exec ilia -p apps
+wm.guesture.swipe.four_right: move workspace to output right
+wm.guesture.swipe.four_left: move workspace to output left
+wm.guesture.swipe.four_up: move workspace to output up
+wm.guesture.swipe.four_down: move workspace to output down
+
+wm.binding.settings: c
+wm.program.settings: cosmic-settings
+wm.binding.display: d
+wm.program.display: cosmic-settings displays
+wm.binding.wifi: w
+wm.program.wifi: cosmic-settings wifi
+wm.binding.bluetooth: b
+wm.program.bluetooth: cosmic-settings bluetooth
+wm.binding.files: Shift+n
+wm.program.files: /usr/bin/nautilus --new-window
+
+wm.binding.exit_app: q
+wm.binding.kill_app: q
+wm.binding.reload: Shift+c
+wm.binding.refresh: Shift+r
+wm.program.refresh_ui: /usr/bin/regolith-look refresh
+wm.binding.logout: Shift+e
+wm.program.logout: /usr/bin/gnome-session-quit --logout --no-prompt && swaymsg exit
+wm.binding.reboot: Shift+b
+wm.program.reboot: /usr/bin/gnome-session-quit --reboot --no-prompt
+wm.binding.shutdown: Shift+p
+wm.program.shutdown: /usr/bin/gnome-session-quit --power-off --no-prompt
+wm.binding.sleep: Shift+s
+wm.program.sleep: systemctl suspend
+
+wm.binding.lock: Escape
+wm.program.lock: gtklock --background $(trawlcat regolith.lockscreen.wallpaper.file /dev/null)
+
+wm.binding.next_free: grave
+wm.binding.move_next_free: Shift+grave
+wm.binding.take_next_free: grave
+
+wm.floatingwindow.border.style: pixel
+wm.floatingwindow.border.size: 1
+wm.window.border.style: pixel
+wm.window.border.size: 1
+wm.gaps.popup_during_fullscreen: smart
+wm.gaps.focus_follows_mouse: no
+wm.hide.edge.borders: smart
+
+wm.binding.inc_gaps: plus
+wm.binding.dec_gaps: minus
+wm.binding.inc_gaps_big: Shift+plus
+wm.binding.dec_gaps_big: Shift+minus
+wm.gaps.inner.size: 5
+wm.gaps.outer.size: 0
+wm.gaps.smart: on
+
+wm.binding.next_layout: Mod1+BackSpace
+wm.program.next_layout: input * xkb_switch_layout next
+
+! =============================================================================
+! Ilia Launcher
+! =============================================================================
+! ilia.stylesheet: /path/to/stylesheet
+! wm.binding.launcher.app: space
+! wm.program.launcher.app: ilia -p apps
+! wm.binding.launcher.cmd: Shift+space
+! wm.program.launcher.cmd: ilia -p terminal
+! wm.binding.help: question
+! wm.program.help: ilia -p keybindings
+! wm.binding.launcher.window: Ctrl+space
+! wm.program.launcher.window: ilia -p windows
+! wm.binding.file_search: space
+! wm.program.file_search: ilia -p tracker
+! wm.binding.look_selector: l
+! wm.program.look_selector: regolith-look-selector
+
+! sway.prompt.logout: swaynag -t warning -m 'Do you really want to logout?' -b 'Logout' '$wm.! program.logout'
+! sway.prompt.reboot: swaynag -t warning -m 'Do you really want to reboot your system?' -b 'Reboot' '$wm.program.reboot'
+! sway.prompt.shutdown: swaynag -t warning -m 'Do you really want to shutdown' -b 'Shutdown' '$wm.program.shutdown'

@@ -1,0 +1,13 @@
+! =============================================================================
+! Main Regolith Xresources Configuration
+! =============================================================================
+
+#include "core.Xresources"
+#include "workspaces.Xresources" 
+#include "colors-bar.Xresources"
+#include "keybindings.Xresources"
+#include "window-management.Xresources"
+#include "gestures.Xresources"
+#include "applications.Xresources"
+#include "power-management.Xresources"
+#include "ilia-launcher.Xresources"

@@ -1,0 +1,43 @@
+! =============================================================================
+! Key Bindings Configuration
+! =============================================================================
+
+! Navigation
+wm.binding.left: h
+wm.binding.right: l
+wm.binding.up: k
+wm.binding.down: j
+
+! Window Movement
+wm.binding.move_left: Shift+h
+wm.binding.move_right: Shift+l
+wm.binding.move_up: Shift+k
+wm.binding.move_down: Shift+j
+
+! Screenshots
+wm.binding.screenshot.window: Print
+wm.binding.screenshot: Shift+Print
+wm.binding.screenshot.all: Shift+Ctrl+Print
+
+! Window Management
+wm.binding.exit_app: q
+wm.binding.kill_app: q
+wm.binding.reload: Shift+c
+wm.binding.refresh: Shift+r
+
+! Workspace Navigation
+wm.binding.next_free: grave
+wm.binding.move_next_free: Shift+grave
+wm.binding.take_next_free: grave
+
+! Gaps Management
+wm.binding.inc_gaps: plus
+wm.binding.dec_gaps: minus
+wm.binding.inc_gaps_big: Shift+plus
+wm.binding.dec_gaps_big: Shift+minus
+
+! Layout
+wm.binding.next_layout: Mod1+BackSpace
+
+! Notification UI
+wm.binding.notification_ui: n

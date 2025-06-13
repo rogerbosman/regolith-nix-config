@@ -1,0 +1,25 @@
+! =============================================================================
+! Ilia Launcher Configuration
+! =============================================================================
+
+! Note: Most ilia bindings are commented out in the original
+! Uncomment and customize as needed
+
+! ilia.stylesheet: /path/to/stylesheet
+! wm.binding.launcher.app: space
+! wm.program.launcher.app: ilia -p apps
+! wm.binding.launcher.cmd: Shift+space
+! wm.program.launcher.cmd: ilia -p terminal
+! wm.binding.help: question
+! wm.program.help: ilia -p keybindings
+! wm.binding.launcher.window: Ctrl+space
+! wm.program.launcher.window: ilia -p windows
+! wm.binding.file_search: space
+! wm.program.file_search: ilia -p tracker
+! wm.binding.look_selector: l
+! wm.program.look_selector: regolith-look-selector
+
+! Sway Prompts (commented out)
+! sway.prompt.logout: swaynag -t warning -m 'Do you really want to logout?' -b 'Logout' '$wm.program.logout'
+! sway.prompt.reboot: swaynag -t warning -m 'Do you really want to reboot your system?' -b 'Reboot' '$wm.program.reboot'
+! sway.prompt.shutdown: swaynag -t warning -m 'Do you really want to shutdown' -b 'Shutdown' '$wm.program.shutdown'

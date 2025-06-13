@@ -1,0 +1,14 @@
+! =============================================================================
+! Core Regolith Configuration
+! =============================================================================
+
+wm.binding.terminal: Return
+wm.program.terminal: kitty fish || alacritty || xterm
+regolith.wallpaper.file: ~/.config/regolith3/wallpaper/regolith.png
+regolith.wallpaper.options: zoom
+
+wm.mod: Mod4
+wm.alt: Mod1
+
+gtk.font_name: Sans 13
+

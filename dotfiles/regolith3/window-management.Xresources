@@ -1,0 +1,25 @@
+! =============================================================================
+! Window Management Configuration
+! =============================================================================
+
+! Cursor Settings
+wm.hide_cursor.timout: 5000
+wm.hide_cursor.show_when_typing: enable
+
+! Window Borders
+wm.floatingwindow.border.style: pixel
+wm.floatingwindow.border.size: 1
+wm.window.border.style: pixel
+wm.window.border.size: 1
+
+! Gaps Configuration
+wm.gaps.popup_during_fullscreen: smart
+wm.gaps.focus_follows_mouse: no
+wm.gaps.inner.size: 5
+wm.gaps.outer.size: 0
+wm.gaps.smart: on
+wm.hide.edge.borders: smart
+
+! Media Controls
+sway.media.volume.step: 5
+wm.media.brightness.step: 5

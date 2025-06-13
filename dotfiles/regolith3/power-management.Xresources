@@ -1,0 +1,17 @@
+! =============================================================================
+! Power Management Configuration
+! =============================================================================
+
+! Power Actions
+wm.binding.logout: Shift+e
+wm.program.logout: /usr/bin/gnome-session-quit --logout --no-prompt && swaymsg exit
+wm.binding.reboot: Shift+b
+wm.program.reboot: /usr/bin/gnome-session-quit --reboot --no-prompt
+wm.binding.shutdown: Shift+p
+wm.program.shutdown: /usr/bin/gnome-session-quit --power-off --no-prompt
+wm.binding.sleep: Shift+s
+wm.program.sleep: systemctl suspend
+
+! Lock Screen
+wm.binding.lock: Escape
+wm.program.lock: gtklock --background $(trawlcat regolith.lockscreen.wallpaper.file /dev/null)
