@@ -175,6 +175,50 @@ sed -i 's/host\s*=\s*"\([^"]*\)"/host = "'"$hostName"'"/' ./flake.nix
 print_separator
 printf "\n%.0s" {1..2}
 
+# Pre-rebuild configuration review
+echo "$NOTE System Configuration Review Required"
+echo "$NOTE Before proceeding with the system rebuild, please review your configuration:"
+printf "\n"
+echo "$WARN IMPORTANT: Please check line 13 in hosts/$hostName/config.nix"
+echo "$NOTE Review the 'imports' section to include/exclude hardware driver modules"
+echo "$NOTE Check the modules folder for available hardware driver options"
+echo "$NOTE Ensure only the drivers relevant to your hardware are enabled"
+printf "\n"
+echo "$NOTE Also review the kernel configuration section below the hardware drivers"
+echo "$NOTE Verify the kernel version you want to use for your system"
+printf "\n"
+read -rp "$CAT Press Enter after reviewing the configuration files..." -r
+
+print_separator
+
+# System rebuild
+echo "$NOTE Starting NixOS system rebuild..."
+echo "$NOTE This process will rebuild your NixOS system with the new Regolith configuration"
+echo "$NOTE Command to be executed: sudo nixos-rebuild switch --flake .#$hostName"
+echo "$NOTE For more information about nixos-rebuild, visit: https://nixos.wiki/wiki/Nixos-rebuild"
+echo "$NOTE For more information about Flakes, visit: https://nixos.wiki/wiki/Flakes"
+printf "\n"
+echo "$WARN This process may take considerable time depending on:"
+echo "      - Internet connection speed"
+echo "      - System specifications" 
+echo "      - Number of packages to download/compile"
+echo "      - Nix cache availability"
+printf "\n"
+read -rp "$CAT Press Enter to start the system rebuild..." -r
+
+print_separator
+
+echo "$NOTE Executing: sudo nixos-rebuild switch --flake .#$hostName"
+if sudo nixos-rebuild switch --flake .#"$hostName"; then
+    echo "$OK System rebuild completed successfully!"
+else
+    echo "$ERROR System rebuild failed. Please check the error messages above."
+    exit 1
+fi
+
+print_separator
+printf "\n%.0s" {1..2}
+
 # Installation completion check
 if command -v regolith-session-wayland &>/dev/null; then
     printf "\n${OK} 🎉 Installation completed successfully!${RESET}\n\n"
