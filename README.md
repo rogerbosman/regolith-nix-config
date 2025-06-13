@@ -2,6 +2,9 @@
 
 > A complete NixOS configuration for the Regolith desktop environment with automated installation and setup.
 
+## Preview 
+![regolith-preview on nixos](https://github.com/user-attachments/assets/48bb7bfe-44c3-4c5c-8e07-11f96b7bc367)
+
 ## Table of Contents
 
 - [Overview](#overview)
@@ -237,8 +240,8 @@ regolith-starter-configs/
 
 #### `hosts/your-hostname/config.nix`
 - Line 13: Hardware driver imports (review and modify as needed)
-- Kernel configuration section
-- System-wide packages and services
+- You can choose you own kernel package: https://nixos.wiki/wiki/Linux_kernel
+- System-wide packages and services : https://search.nixos.org/options?show=environment.systemPackages
 
 #### `hosts/your-hostname/variables.nix`
 - User-specific settings
@@ -325,6 +328,8 @@ cp -r ./dotfiles/regolith3/* ~/.config/regolith3/
 - **Flakes Documentation**: [https://nixos.wiki/wiki/Flakes](https://nixos.wiki/wiki/Flakes)
 - **nixos-rebuild Guide**: [https://nixos.wiki/wiki/Nixos-rebuild](https://nixos.wiki/wiki/Nixos-rebuild)
 - **Regolith Documentation**: [https://regolith-desktop.com/](https://regolith-desktop.com/)
+- **Begineer Handbook**: [https://github.com/kstenerud/nixos-beginners-handbook](https://github.com/kstenerud/nixos-beginners-handbook)
+- **Zero to Nix**: [https://zero-to-nix.com/](https://zero-to-nix.com/)
 
 ## Notes
 
