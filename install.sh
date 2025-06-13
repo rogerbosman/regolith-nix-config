@@ -191,6 +191,40 @@ read -rp "$CAT Press Enter after reviewing the configuration files..." -r
 
 print_separator
 
+# Flake structure review
+echo "$NOTE Reviewing Flake Structure"
+echo "$NOTE The 'nix flake show' command displays the complete structure of a Nix flake"
+echo "$NOTE This will show all nixosConfigurations, packages, and other outputs available"
+echo "$NOTE In this case, it will present the nixosConfigurations in a tree format"
+printf "\n"
+echo "$NOTE Executing: nix flake show"
+nix flake show
+printf "\n"
+echo "$NOTE The above output shows your current flake structure with available configurations"
+read -rp "$CAT Press Enter after reviewing the flake structure..." -r
+
+print_separator
+
+# Optional: Show example flake structure
+echo "$NOTE Optional: Example Flake Structure"
+echo "$NOTE You can also view other flake structures to understand what flakes can contain"
+echo "$NOTE For example, flakes can include modules, packages, devShells, and more"
+echo "$NOTE The regolith-nix flake contains additional components beyond just configurations"
+printf "\n"
+read -rp "$CAT Would you like to see an example flake structure (regolith-lab/regolith-nix)? [y/N]: " show_example
+show_example=${show_example:-N}
+
+if [[ "$show_example" =~ ^[Yy]$ ]]; then
+    echo "$NOTE Executing: nix flake show github:regolith-lab/regolith-nix"
+    nix flake show github:regolith-lab/regolith-nix
+    printf "\n"
+    echo "$NOTE Notice how this flake contains packages, devShells, and other outputs"
+    echo "$NOTE Your current flake focuses primarily on nixosConfigurations"
+    read -rp "$CAT Press Enter to continue..." -r
+fi
+
+print_separator
+
 # System rebuild
 echo "$NOTE Starting NixOS system rebuild..."
 echo "$NOTE This process will rebuild your NixOS system with the new Regolith configuration"
