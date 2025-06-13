@@ -4,7 +4,7 @@
 {
   # Git Configuration ( For Pulling Software Repos )
   gitUsername = "gituser"; # Set your Git Username
-  gitEmail = "gitemail";
+  gitEmail = "git-email";
 
   clock24h = true;
 

@@ -12,7 +12,7 @@
     	let
       system = "x86_64-linux";
       host = "regolith"; 
-      username = "roronoa"; 
+      username = "username"; 
 
     pkgs = import nixpkgs {
        	inherit system;

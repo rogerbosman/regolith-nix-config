@@ -156,8 +156,8 @@ echo "$NOTE Configuring Git settings for the system..."
 read -rp "$CAT Enter your Git username [gituser]: " gitUsername
 gitUsername=${gitUsername:-gituser}
 
-read -rp "$CAT Enter your Git email [gitemail]: " gitEmail
-gitEmail=${gitEmail:-gitemail}
+read -rp "$CAT Enter your Git email [git-email]: " gitEmail
+gitEmail=${gitEmail:-git-email}
 
 # Update git settings in variables.nix
 sed -i 's/gitUsername\s*=\s*"\([^"]*\)"/gitUsername = "'"$gitUsername"'"/' ./hosts/$hostName/variables.nix
