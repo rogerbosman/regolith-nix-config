@@ -225,6 +225,43 @@ fi
 
 print_separator
 
+# Flake validation check
+echo "$NOTE Flake Validation Check"
+echo "$NOTE The 'nix flake check' command evaluates all outputs that the flake generates"
+echo "$NOTE This helps catch configuration errors before running nixos-rebuild switch"
+echo "$NOTE It's much faster than rebuilding the entire system configuration"
+echo "$NOTE This can help identify issues early and save time during troubleshooting"
+printf "\n"
+echo "$NOTE Executing: nix flake check"
+printf "\n"
+
+if nix flake check; then
+    echo "$OK Flake validation completed successfully!"
+    echo "$NOTE All flake outputs are valid and can be built"
+else
+    echo "$ERROR Flake validation failed!"
+    echo "$WARN Please review the error messages above and fix any configuration issues"
+    echo "$NOTE Common issues include:"
+    echo "      - Syntax errors in .nix files"
+    echo "      - Missing or incorrect imports"
+    echo "      - Invalid configuration options"
+    echo "      - Hardware configuration problems"
+    printf "\n"
+    read -rp "$CAT Press Enter after fixing the errors to continue, or Ctrl+C to exit..." -r
+    printf "\n"
+    
+    # Re-run flake check after user fixes
+    echo "$NOTE Re-running flake validation..."
+    if nix flake check; then
+        echo "$OK Flake validation now passes!"
+    else
+        echo "$ERROR Flake validation still failing. Please review and fix all errors."
+        exit 1
+    fi
+fi
+
+print_separator
+
 # System rebuild
 echo "$NOTE Starting NixOS system rebuild..."
 echo "$NOTE This process will rebuild your NixOS system with the new Regolith configuration"
