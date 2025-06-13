@@ -208,8 +208,26 @@ if [ "$skip_to_check" = true ]; then
         # Installation completion check
         if command -v regolith-session-wayland &>/dev/null; then
             printf "\n${OK} 🎉 Installation completed successfully!${RESET}\n\n"
-            printf "${NOTE} Start Regolith Session with: regolith-session-wayland${RESET}\n"
-            printf "${NOTE} It is highly recommended to reboot your system${RESET}\n\n"
+            
+            # System rebuild information
+            echo "$NOTE Future System Updates:"
+            echo "$NOTE To rebuild your system after making configuration changes, use:"
+            echo "$NOTE   sudo nixos-rebuild switch --flake .#$hostName"
+            echo "$NOTE To test changes without switching permanently, use:"
+            echo "$NOTE   sudo nixos-rebuild test --flake .#$hostName"
+            printf "\n"
+            
+            echo "$NOTE Starting Regolith Session:"
+            echo "$NOTE You can find the login entry named 'Regolith Wayland' to launch the Regolith session"
+            echo "$NOTE You may also see 2 other entries that are currently Work In Progress (WIP)"
+            printf "\n"
+            
+            echo "$NOTE It is highly recommended to reboot your system before using Regolith"
+            printf "\n"
+            
+            read -rp "$CAT Press Enter to continue to reboot options..." -r
+            
+            print_separator
 
             # Reboot prompt
             read -rp "${CAT} Would you like to reboot now? [y/N]: ${RESET}" reboot_choice
@@ -219,6 +237,9 @@ if [ "$skip_to_check" = true ]; then
                 systemctl reboot
             else
                 echo "Reboot skipped. Please reboot manually when convenient."
+                printf "\n"
+                echo "$OK Thank you for installing Regolith on NixOS! 🚀"
+                echo "$NOTE Enjoy your new desktop environment!"
             fi
         else
             printf "\n${WARN} ⚠️  Installation may have failed. Please check the logs...${RESET}\n\n"
@@ -534,8 +555,26 @@ fi
 # Installation completion check
 if command -v regolith-session-wayland &>/dev/null; then
     printf "\n${OK} 🎉 Installation completed successfully!${RESET}\n\n"
-    printf "${NOTE} Start Regolith Session with: regolith-session-wayland${RESET}\n"
-    printf "${NOTE} It is highly recommended to reboot your system${RESET}\n\n"
+    
+    # System rebuild information
+    echo "$NOTE Future System Updates:"
+    echo "$NOTE To rebuild your system after making configuration changes, use:"
+    echo "$NOTE   sudo nixos-rebuild switch --flake .#$hostName"
+    echo "$NOTE To test changes without switching permanently, use:"
+    echo "$NOTE   sudo nixos-rebuild test --flake .#$hostName"
+    printf "\n"
+    
+    echo "$NOTE Starting Regolith Session:"
+    echo "$NOTE You can find the login entry named 'Regolith Wayland' to launch the Regolith session"
+    echo "$NOTE You may also see 2 other entries that are currently Work In Progress (WIP)"
+    printf "\n"
+    
+    echo "$NOTE It is highly recommended to reboot your system before using Regolith"
+    printf "\n"
+    
+    read -rp "$CAT Press Enter to continue to reboot options..." -r
+    
+    print_separator
 
     # Reboot prompt
     read -rp "${CAT} Would you like to reboot now? [y/N]: ${RESET}" reboot_choice
@@ -545,6 +584,9 @@ if command -v regolith-session-wayland &>/dev/null; then
         systemctl reboot
     else
         echo "Reboot skipped. Please reboot manually when convenient."
+        printf "\n"
+        echo "$OK Thank you for installing Regolith on NixOS! 🚀"
+        echo "$NOTE Enjoy your new desktop environment!"
     fi
 else
     printf "\n${WARN} ⚠️  Installation may have failed. Please check the logs...${RESET}\n\n"
