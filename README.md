@@ -2,6 +2,20 @@
 
 > A complete NixOS configuration for the Regolith desktop environment with automated installation and setup.
 
+## Quick Setup
+
+Get started immediately with the official Regolith NixOS template:
+
+```bash
+# Initialize a new Regolith NixOS configuration
+nix flake init -t github:regolith-lab/regolith-nix-starter-config#default
+
+# Run the installation script
+./install.sh
+```
+
+This template provides a complete, ready-to-use NixOS configuration with Regolith desktop environment.
+
 ## Preview 
 ![regolith-preview on nixos](https://github.com/user-attachments/assets/48bb7bfe-44c3-4c5c-8e07-11f96b7bc367)
 
@@ -29,7 +43,17 @@ This repository provides a streamlined way to install and configure Regolith des
 
 ## Installation
 
-### Quick Start
+### Method 1: Using Flake Template (Recommended)
+
+```bash
+# Initialize from template
+nix flake init -t github:regolith-lab/regolith-nix-starter-config#default
+
+# Run the installation script
+./install.sh
+```
+
+### Method 2: Clone Repository
 
 ```bash
 # Clone the repository
