@@ -35,6 +35,7 @@ in
   environment.shells = with pkgs; [ zsh ];
   environment.systemPackages = with pkgs; [ lsd fzf ]; 
    
+  programs.zsh = { enable = true; };
   /*
   programs = {
   # Zsh configuration
