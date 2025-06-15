@@ -16,6 +16,7 @@
   ];
 
   # --- Zsh Configuration (MIGRATED from users.nix) ---
+  /*
   programs.zsh = {
     enable = true;
     enableCompletion = true;
@@ -51,6 +52,7 @@
       setopt appendhistory;
     '';
   };
+  */
 
   # You can now add other Home Manager specific configurations here,
   # such as Git user config, other program settings, dotfiles, etc.
